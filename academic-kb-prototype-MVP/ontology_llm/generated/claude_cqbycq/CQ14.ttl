@@ -1,0 +1,35 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Publication a owl:Class ;
+    rdfs:label "Publication"@en, "Публикация"@ru ;
+    rdfs:comment "A scientific publication."@en .
+
+:District a owl:Class ;
+    rdfs:label "District"@en, "Район"@ru ;
+    rdfs:comment "Petroleum district."@en .
+
+:ResearchType a owl:Class ;
+    rdfs:label "ResearchType"@en, "Тип исследования"@ru ;
+    rdfs:comment "Kind of research."@en .
+
+:Geophysical a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "Geophysical"@en, "Геофизическое"@ru .
+
+:isAbout a owl:ObjectProperty ;
+    rdfs:label "is about"@en, "относится к"@ru ;
+    rdfs:domain :Publication ;
+    rdfs:range :District .
+
+:hasResearchType a owl:ObjectProperty ;
+    rdfs:label "has research type"@en, "относится к типу исследования"@ru ;
+    rdfs:domain :Publication ;
+    rdfs:range :ResearchType .
+
+:GeophysicalPublication a owl:Class ;
+    rdfs:label "Geophysical publication"@en, "Геофизическая публикация"@ru ;
+    owl:equivalentClass [ a owl:Restriction ; owl:onProperty :hasResearchType ; owl:hasValue :Geophysical ] ;
+    rdfs:subClassOf :Publication .

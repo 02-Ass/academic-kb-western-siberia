@@ -1,0 +1,41 @@
+version: "3.9"
+
+# Поднимает PostgreSQL с расширением PostGIS — целевую СУБД проекта
+# (см. отчёт, раздел 3.2.2 "Уровень хранения данных").
+#
+# Запуск:
+#   docker compose up -d
+#
+# После того как контейнер поднялся, укажите backend'у, что использовать
+# именно эту базу (вместо SQLite по умолчанию):
+#
+#   Windows (PowerShell):
+#     $env:DATABASE_URL="postgresql+psycopg://kb_user:kb_password@localhost:5432/academic_kb"
+#   Linux/macOS:
+#     export DATABASE_URL="postgresql+psycopg://kb_user:kb_password@localhost:5432/academic_kb"
+#
+# Затем как обычно:
+#   python -m scripts.seed_db
+#   uvicorn app.main:app --reload --port 8000
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: academic_kb_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: kb_user
+      POSTGRES_PASSWORD: kb_password
+      POSTGRES_DB: academic_kb
+    ports:
+      - "5432:5432"
+    volumes:
+      - academic_kb_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kb_user -d academic_kb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  academic_kb_pgdata:

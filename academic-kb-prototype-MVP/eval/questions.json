@@ -1,0 +1,149 @@
+{
+  "_comment": "expect — регулярное выражение: публикация считается релевантной вопросу, если оно находится в её названии или аннотации. Правьте и дополняйте под свою тему.",
+  "questions": [
+    {
+      "id": "q01",
+      "q": "Какие исследования проводились в Шаимском районе?",
+      "q_en": "What research was carried out in the Shaim district?",
+      "expect": "shaim|шаим"
+    },
+    {
+      "id": "q02",
+      "q": "Что известно о минерализации подземных вод вблизи нефтяных месторождений?",
+      "q_en": "Groundwater mineralization near oil fields",
+      "expect": "mineraliz|salin|минерализ"
+    },
+    {
+      "id": "q03",
+      "q": "Какова гидрогеология нефтегазоносных районов Западной Сибири?",
+      "q_en": "Hydrogeology of West Siberian petroleum areas",
+      "expect": "hydrogeolog|groundwater|подземн|гидрогеолог"
+    },
+    {
+      "id": "q04",
+      "q": "Как строение тюменской свиты влияет на коллекторские свойства?",
+      "q_en": "Tyumen formation reservoir properties",
+      "expect": "tyumen|тюмен"
+    },
+    {
+      "id": "q05",
+      "q": "Нефтеносность юрских отложений Западной Сибири",
+      "q_en": "Oil potential of Jurassic deposits in West Siberia",
+      "expect": "jurassic|юрск"
+    },
+    {
+      "id": "q06",
+      "q": "Нефть в породах палеозойского фундамента",
+      "q_en": "Oil in pre-Jurassic basement rocks of West Siberia",
+      "expect": "basement|фундамент"
+    },
+    {
+      "id": "q07",
+      "q": "Тектоническое строение и разломы Западно-Сибирского бассейна",
+      "q_en": "Tectonic structure and faults of the West Siberian basin",
+      "expect": "tecton|тектон|fault|разлом"
+    },
+    {
+      "id": "q08",
+      "q": "Сейсморазведка и геофизические исследования скважин",
+      "q_en": "Seismic exploration and well logging in West Siberia",
+      "expect": "seismic|geophys|сейсм|геофиз|logging|каротаж"
+    },
+    {
+      "id": "q09",
+      "q": "Геохимия нефтей Западной Сибири",
+      "q_en": "Geochemistry of West Siberian crude oils",
+      "expect": "geochem|геохим"
+    },
+    {
+      "id": "q10",
+      "q": "Пористость и проницаемость песчаных коллекторов",
+      "q_en": "Porosity and permeability of sandstone reservoirs",
+      "expect": "porosity|permeab|пористост|проницаем"
+    },
+    {
+      "id": "q11",
+      "q": "Заводнение пластов и обводнённость скважин",
+      "q_en": "Waterflooding and water cut of oil wells",
+      "expect": "waterflood|water cut|заводнен|обводнен"
+    },
+    {
+      "id": "q12",
+      "q": "Методы повышения нефтеотдачи",
+      "q_en": "Enhanced oil recovery methods",
+      "expect": "oil recovery|нефтеотдач|eor"
+    },
+    {
+      "id": "q13",
+      "q": "Трудноизвлекаемые запасы нефти",
+      "q_en": "Hard-to-recover oil reserves",
+      "expect": "hard-to-recover|unconventional|трудноизвлекаем"
+    },
+    {
+      "id": "q14",
+      "q": "Баженовская свита",
+      "q_en": "Bazhenov formation",
+      "expect": "bazhenov|баженов"
+    },
+    {
+      "id": "q15",
+      "q": "Месторождения Сургутского района",
+      "q_en": "Oil fields of the Surgut region",
+      "expect": "surgut|сургут"
+    },
+    {
+      "id": "q16",
+      "q": "Васюганская свита и её коллекторы",
+      "q_en": "Vasyugan formation reservoirs",
+      "expect": "vasyugan|васюган"
+    },
+    {
+      "id": "q17",
+      "q": "Моделирование пластов и цифровые модели месторождений",
+      "q_en": "Digital reservoir modeling and simulation",
+      "expect": "simulation|modeling|digital|моделирован"
+    },
+    {
+      "id": "q18",
+      "q": "Редкие металлы в углях Западной Сибири",
+      "q_en": "Rare metals in coals of West Siberia",
+      "expect": "scandium|rare metal|coal|скандий|уголь"
+    },
+    {
+      "id": "q19",
+      "q": "Стратиграфия и литология юрских отложений",
+      "q_en": "Stratigraphy and lithology of the Jurassic",
+      "expect": "stratigraph|lithol|стратиграф|литолог"
+    },
+    {
+      "id": "q20",
+      "q": "Бурение и заканчивание скважин",
+      "q_en": "Drilling and completion of wells",
+      "expect": "drilling|completion|бурен"
+    },
+    {
+      "id": "q21",
+      "q": "Запасы и ресурсы углеводородов Западной Сибири",
+      "q_en": "Hydrocarbon reserves and resources of West Siberia",
+      "expect": "reserves|resources|запас|ресурс"
+    },
+    {
+      "id": "q22",
+      "q": "Геодинамика и история развития осадочного бассейна",
+      "q_en": "Geodynamics and evolution of the sedimentary basin",
+      "expect": "geodynam|evolution|геодинам"
+    },
+    {
+      "id": "q23",
+      "q": "Миграция углеводородов и нефтематеринские породы",
+      "q_en": "Hydrocarbon migration and source rocks",
+      "expect": "migration|source rock|миграци|материнск"
+    },
+    {
+      "id": "q24",
+      "q": "Какие работы посвящены Шушминскому и Ловинскому месторождениям?",
+      "q_en": "Studies of the Shushma and Lovinskoye fields",
+      "expect": "shushm|lovin|шушм|ловин"
+    }
+  ]
+}

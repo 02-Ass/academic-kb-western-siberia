@@ -1,0 +1,25 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Publication a owl:Class ;
+    rdfs:label "Publication"@en, "Публикация"@ru ;
+    rdfs:comment "A scientific publication."@en .
+
+:Field a owl:Class ;
+    rdfs:label "Field"@en, "Месторождение"@ru ;
+    rdfs:comment "Oil and gas field."@en .
+
+:isAbout a owl:ObjectProperty ;
+    rdfs:label "is about"@en, "относится к"@ru ;
+    rdfs:domain :Publication ;
+    rdfs:range :Field .
+
+:publishedInYear a owl:DatatypeProperty ;
+    rdfs:label "publishedInYear"@en, "год издания"@ru ;
+    rdfs:comment "Year, used for filtering (e.g. after 2010)."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:integer .
+

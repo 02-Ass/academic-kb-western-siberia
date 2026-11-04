@@ -1,0 +1,321 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:FieldDevelopment a :ResearchType,
+        owl:NamedIndividual ;
+    rdfs:label "FieldDevelopment"@en,
+        "Разработка месторождений"@ru .
+
+:Geocryological a :ResearchType,
+        owl:NamedIndividual ;
+    rdfs:label "Geocryological"@en,
+        "Геокриологическое"@ru .
+
+:Geodynamic a :ResearchType,
+        owl:NamedIndividual ;
+    rdfs:label "Geodynamic"@en,
+        "Геодинамическое"@ru .
+
+:Geological a :ResearchType,
+        owl:NamedIndividual ;
+    rdfs:label "Geological"@en,
+        "Геологическое"@ru .
+
+:GeophysicalPublication a owl:Class ;
+    rdfs:label "Geophysical publication"@en,
+        "Геофизическая публикация"@ru ;
+    rdfs:subClassOf :Publication ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasValue :Geophysical ;
+            owl:onProperty :hasResearchType ] .
+
+:Hydrogeological a :ResearchType,
+        owl:NamedIndividual ;
+    rdfs:label "Hydrogeological"@en,
+        "Гидрогеологическое"@ru .
+
+:MultiObjectPublication a owl:Class ;
+    rdfs:label "Multi-object publication"@en,
+        "Публикация о нескольких объектах"@ru ;
+    rdfs:subClassOf :Publication ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty :isAbout ] .
+
+:Oblast a owl:Class ;
+    rdfs:label "Oblast"@en,
+        "Область"@ru ;
+    rdfs:comment "Petroleum oblast."@en .
+
+:affiliatedWith a owl:ObjectProperty ;
+    rdfs:label "affiliated with"@en,
+        "работает в"@ru ;
+    rdfs:domain :Author ;
+    rdfs:range :Organization .
+
+:authorOf a owl:ObjectProperty ;
+    rdfs:label "author of"@en,
+        "автор"@ru ;
+    rdfs:domain :Author ;
+    rdfs:range :Publication ;
+    owl:inverseOf :hasAuthor .
+
+:depth a owl:DatatypeProperty ;
+    rdfs:label "depth"@en,
+        "глубина"@ru ;
+    rdfs:comment "Depth in metres."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:discoveryYear a owl:DatatypeProperty ;
+    rdfs:label "discoveryYear"@en,
+        "год открытия"@ru ;
+    rdfs:comment "Year of discovery."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:gYear .
+
+:doi a owl:DatatypeProperty ;
+    rdfs:label "doi"@en,
+        "DOI"@ru ;
+    rdfs:comment "Digital Object Identifier."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:string .
+
+:formationName a owl:DatatypeProperty ;
+    rdfs:label "formationName"@en,
+        "свита"@ru ;
+    rdfs:comment "Name of the geological formation."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:string .
+
+:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName"@en,
+        "ФИО"@ru ;
+    rdfs:comment "Full name of the author."@en ;
+    rdfs:domain :Author ;
+    rdfs:range xsd:string .
+
+:hasPart a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "has part"@en,
+        "включает"@ru ;
+    rdfs:domain :GeologicalObject ;
+    rdfs:range :GeologicalObject ;
+    owl:inverseOf :partOf .
+
+:journalName a owl:DatatypeProperty ;
+    rdfs:label "journalName"@en,
+        "журнал"@ru ;
+    rdfs:comment "Name of the journal."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:string .
+
+:latitude a owl:DatatypeProperty ;
+    rdfs:label "latitude"@en,
+        "широта"@ru ;
+    rdfs:comment "Latitude."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude"@en,
+        "долгота"@ru ;
+    rdfs:comment "Longitude."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:oilType a owl:DatatypeProperty ;
+    rdfs:label "oilType"@en,
+        "тип нефти"@ru ;
+    rdfs:comment "Oil type, e.g. light."@en ;
+    rdfs:domain :Deposit ;
+    rdfs:range xsd:string .
+
+:organizationName a owl:DatatypeProperty ;
+    rdfs:label "organizationName"@en,
+        "название организации"@ru ;
+    rdfs:comment "Name of the organisation."@en ;
+    rdfs:domain :Organization ;
+    rdfs:range xsd:string .
+
+:permeability a owl:DatatypeProperty ;
+    rdfs:label "permeability"@en,
+        "проницаемость"@ru ;
+    rdfs:comment "Permeability, mD."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:decimal .
+
+:porosity a owl:DatatypeProperty ;
+    rdfs:label "porosity"@en,
+        "пористость"@ru ;
+    rdfs:comment "Porosity, %."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:decimal .
+
+:publicationYear a owl:DatatypeProperty ;
+    rdfs:label "publicationYear"@en,
+        "год публикации"@ru ;
+    rdfs:comment "Year of publication."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:gYear .
+
+:publishedInYear a owl:DatatypeProperty ;
+    rdfs:label "publishedInYear"@en,
+        "год издания"@ru ;
+    rdfs:comment "Year, used for filtering (e.g. after 2010)."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:integer .
+
+:reserves a owl:DatatypeProperty ;
+    rdfs:label "reserves"@en,
+        "запасы"@ru ;
+    rdfs:comment "Reserves, tonnes."@en ;
+    rdfs:domain :Deposit ;
+    rdfs:range xsd:decimal .
+
+:reservoirType a owl:DatatypeProperty ;
+    rdfs:label "reservoirType"@en,
+        "тип коллектора"@ru ;
+    rdfs:comment "Reservoir type."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:string .
+
+:thickness a owl:DatatypeProperty ;
+    rdfs:label "thickness"@en,
+        "толщина"@ru ;
+    rdfs:comment "Thickness, m."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:decimal .
+
+:title a owl:DatatypeProperty ;
+    rdfs:label "title"@en,
+        "название"@ru ;
+    rdfs:comment "Title."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:string .
+
+:url a owl:DatatypeProperty ;
+    rdfs:label "url"@en,
+        "ссылка"@ru ;
+    rdfs:comment "Link to the publication."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:anyURI .
+
+:waterCut a owl:DatatypeProperty ;
+    rdfs:label "waterCut"@en,
+        "обводнённость"@ru ;
+    rdfs:comment "Water cut, percent."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:Geophysical a :ResearchType,
+        owl:NamedIndividual ;
+    rdfs:label "Geophysical"@en,
+        "Геофизическое"@ru .
+
+:Province a owl:Class ;
+    rdfs:label "Province"@en,
+        "Провинция"@ru ;
+    rdfs:comment "Petroleum province."@en ;
+    rdfs:subClassOf :GeologicalObject .
+
+:hasAuthor a owl:ObjectProperty ;
+    rdfs:label "has author"@en,
+        "имеет автора"@ru ;
+    rdfs:domain :Publication ;
+    rdfs:range :Author .
+
+:hasResearchType a owl:ObjectProperty ;
+    rdfs:label "has research type"@en,
+        "относится к типу исследования"@ru ;
+    rdfs:domain :Publication ;
+    rdfs:range :ResearchType .
+
+:District a owl:Class ;
+    rdfs:label "District"@en,
+        "Нефтегазоносный район"@ru,
+        "Район"@ru ;
+    rdfs:comment "Petroleum district."@en ;
+    rdfs:subClassOf :GeologicalObject .
+
+:Organization a owl:Class ;
+    rdfs:label "Organization"@en,
+        "Организация"@ru ;
+    rdfs:comment "University or institute."@en .
+
+:isAbout a owl:ObjectProperty ;
+    rdfs:label "is about"@en,
+        "относится к"@ru ;
+    rdfs:comment "Links a publication to a geological object. Propagates upwards along partOf."@en,
+        "Links a publication to the field it studies."@en ;
+    rdfs:domain :Publication ;
+    rdfs:range :District,
+        :Field,
+        :GeologicalObject,
+        :Province ;
+    owl:propertyChainAxiom ( :isAbout :partOf ) .
+
+:partOf a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "part of"@en,
+        "входит в"@ru ;
+    rdfs:comment "A deposit is confined to a horizon."@en,
+        "A field belongs to a district."@en,
+        "A geological object is part of a larger one."@en,
+        "A horizon is distinguished within a field."@en,
+        "Hierarchical containment: field in district, district in oblast, oblast in province."@en,
+        "Transitive containment, so that all nested objects of a province can be retrieved."@en ;
+    rdfs:domain :Deposit,
+        :Field,
+        :GeologicalObject,
+        :Horizon ;
+    rdfs:range :District,
+        :Field,
+        :GeologicalObject,
+        :Horizon .
+
+:Deposit a owl:Class ;
+    rdfs:label "Deposit"@en,
+        "Залежь"@ru ;
+    rdfs:comment "Hydrocarbon deposit."@en ;
+    rdfs:subClassOf :GeologicalObject .
+
+:Author a owl:Class ;
+    rdfs:label "Author"@en,
+        "Автор"@ru ;
+    rdfs:comment "A person who authored publications."@en,
+        "A person."@en .
+
+:Horizon a owl:Class ;
+    rdfs:label "Horizon"@en,
+        "Пласт"@ru ;
+    rdfs:comment "Productive horizon (reservoir layer)."@en,
+        "Productive horizon."@en ;
+    rdfs:subClassOf :GeologicalObject .
+
+:ResearchType a owl:Class ;
+    rdfs:label "ResearchType"@en,
+        "Тип исследования"@ru ;
+    rdfs:comment "Kind of research."@en .
+
+:Field a owl:Class ;
+    rdfs:label "Field"@en,
+        "Месторождение"@ru ;
+    rdfs:comment "An oil and gas field."@en,
+        "Oil and gas field."@en ;
+    rdfs:subClassOf :GeologicalObject .
+
+:GeologicalObject a owl:Class ;
+    rdfs:label "GeologicalObject"@en,
+        "Геологический объект"@ru ;
+    rdfs:comment "Any object of the hierarchy."@en,
+        "Any spatial object of the hierarchy."@en .
+
+:Publication a owl:Class ;
+    rdfs:label "Publication"@en,
+        "Публикация"@ru ;
+    rdfs:comment "A scientific publication."@en .
+

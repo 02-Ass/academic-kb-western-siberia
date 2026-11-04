@@ -1,0 +1,256 @@
+{
+ "user_story": {
+  "ru": "Я — магистрант-геолог. Я изучаю нефтегазовые месторождения Западной Сибири и хочу в одной базе знаний находить научные публикации по конкретному объекту (провинции, области, нефтегазоносному району, месторождению, пласту, залежи) и по типу исследования (геологическое, геофизическое, гидрогеологическое, геодинамическое, геокриологическое, разработка месторождений). Объекты образуют иерархию «провинция → область → район → месторождение → пласт → залежь», и публикация о пласте должна находиться и при поиске по его месторождению, району, области и провинции. Для публикации мне нужны название, авторы (с организацией), год, журнал, DOI и ссылка. Для месторождения, пласта и залежи нужны их параметры, которые хранятся в базе данных.",
+  "en": "I am a master's student in geology. I study the oil and gas fields of Western Siberia and want to find, in one knowledge base, scientific publications about a specific object (province, oblast, petroleum district, field, horizon, deposit) and by research type (geological, geophysical, hydrogeological, geodynamic, geocryological, field development). The objects form the hierarchy province -> oblast -> district -> field -> horizon -> deposit, and a publication about a horizon must also be found when I search by its field, district, oblast or province. For a publication I need its title, authors (with affiliation), year, journal, DOI and link. For fields, horizons and deposits I need the parameters stored in the database."
+ },
+ "slots": {
+  "cls.object": "общий суперкласс нефтегазовых объектов (необязателен)",
+  "cls.province": "Провинция",
+  "cls.oblast": "Область",
+  "cls.rayon": "Район",
+  "cls.field": "Месторождение",
+  "cls.horizon": "Пласт/горизонт",
+  "cls.deposit": "Залежь",
+  "cls.publication": "Публикация",
+  "cls.author": "Автор (как сущность)",
+  "cls.researchType": "Тип исследования",
+  "rel.partOf": "объект входит в объект выше по иерархии",
+  "rel.partOf.transitive": "входит-в транзитивно",
+  "rel.pubAbout": "публикация относится к объекту",
+  "rel.pubAbout.inherit": "публикация о нижнем объекте относится и ко всем объектам выше (вывод)",
+  "rel.pubType": "публикация относится к типу исследования",
+  "rel.authored": "у публикации есть автор (связь с сущностью «автор»)",
+  "pub.title": "название",
+  "pub.year": "год",
+  "pub.journal": "журнал",
+  "pub.link": "ссылка",
+  "pub.doi": "DOI",
+  "author.name": "ФИО автора",
+  "author.affiliation": "организация автора",
+  "field.discoveryYear": "год открытия месторождения",
+  "field.depth": "глубина",
+  "field.waterCut": "обводнённость",
+  "field.coords": "координаты",
+  "horizon.formation": "свита/формация пласта",
+  "horizon.thickness": "толщина",
+  "horizon.reservoirType": "тип коллектора",
+  "horizon.permeability": "проницаемость",
+  "horizon.porosity": "пористость",
+  "deposit.oilType": "тип нефти",
+  "deposit.reserves": "запасы"
+ },
+ "cqs": [
+  {
+   "id": "CQ1",
+   "ru": "Какие публикации относятся к данному месторождению?",
+   "en": "Which publications are about a given field?",
+   "needs": [
+    "cls.publication",
+    "cls.field",
+    "rel.pubAbout"
+   ]
+  },
+  {
+   "id": "CQ2",
+   "ru": "Какие публикации относятся к данному нефтегазоносному району, включая публикации о его месторождениях, пластах и залежах?",
+   "en": "Which publications are about a given district, including publications about its fields, horizons and deposits?",
+   "needs": [
+    "cls.publication",
+    "cls.rayon",
+    "rel.pubAbout",
+    "rel.pubAbout.inherit"
+   ]
+  },
+  {
+   "id": "CQ3",
+   "ru": "В какой район, область и провинцию входит данное месторождение?",
+   "en": "Which district, oblast and province does a given field belong to?",
+   "needs": [
+    "cls.field",
+    "cls.rayon",
+    "cls.oblast",
+    "cls.province",
+    "rel.partOf",
+    "rel.partOf.transitive"
+   ]
+  },
+  {
+   "id": "CQ4",
+   "ru": "Какие месторождения входят в данный район?",
+   "en": "Which fields belong to a given district?",
+   "needs": [
+    "cls.field",
+    "cls.rayon",
+    "rel.partOf"
+   ]
+  },
+  {
+   "id": "CQ5",
+   "ru": "Какие пласты (горизонты) выделены на данном месторождении?",
+   "en": "Which horizons are distinguished in a given field?",
+   "needs": [
+    "cls.field",
+    "cls.horizon",
+    "rel.partOf"
+   ]
+  },
+  {
+   "id": "CQ6",
+   "ru": "Какие залежи приурочены к данному пласту?",
+   "en": "Which deposits are associated with a given horizon?",
+   "needs": [
+    "cls.horizon",
+    "cls.deposit",
+    "rel.partOf"
+   ]
+  },
+  {
+   "id": "CQ7",
+   "ru": "Какие объекты (районы, месторождения, пласты, залежи) находятся в данной провинции на любом уровне вложенности?",
+   "en": "Which objects lie in a given province at any nesting depth?",
+   "needs": [
+    "cls.province",
+    "rel.partOf",
+    "rel.partOf.transitive"
+   ]
+  },
+  {
+   "id": "CQ8",
+   "ru": "К какому типу исследования относится данная публикация?",
+   "en": "What research type does a given publication belong to?",
+   "needs": [
+    "cls.publication",
+    "cls.researchType",
+    "rel.pubType"
+   ]
+  },
+  {
+   "id": "CQ9",
+   "ru": "Какие типы исследований различаются (геологическое, геофизическое, гидрогеологическое и т. д.)?",
+   "en": "Which research types are distinguished?",
+   "needs": [
+    "cls.researchType"
+   ]
+  },
+  {
+   "id": "CQ10",
+   "ru": "Кто авторы данной публикации?",
+   "en": "Who are the authors of a given publication?",
+   "needs": [
+    "cls.publication",
+    "rel.authored",
+    "author.name"
+   ]
+  },
+  {
+   "id": "CQ11",
+   "ru": "В какой организации работает данный автор?",
+   "en": "What organisation does a given author belong to?",
+   "needs": [
+    "cls.author",
+    "author.affiliation"
+   ]
+  },
+  {
+   "id": "CQ12",
+   "ru": "В каком году и в каком журнале опубликована данная работа?",
+   "en": "In which year and journal was a given work published?",
+   "needs": [
+    "cls.publication",
+    "pub.year",
+    "pub.journal"
+   ]
+  },
+  {
+   "id": "CQ13",
+   "ru": "Каковы название, DOI и ссылка на данную публикацию?",
+   "en": "What are the title, DOI and link of a given publication?",
+   "needs": [
+    "cls.publication",
+    "pub.title",
+    "pub.doi",
+    "pub.link"
+   ]
+  },
+  {
+   "id": "CQ14",
+   "ru": "Какие геофизические публикации относятся к данному району?",
+   "en": "Which geophysical publications are about a given district?",
+   "needs": [
+    "cls.publication",
+    "cls.rayon",
+    "cls.researchType",
+    "rel.pubAbout",
+    "rel.pubType",
+    "rel.pubAbout.inherit"
+   ]
+  },
+  {
+   "id": "CQ15",
+   "ru": "Какие публикации по данному месторождению вышли после 2010 года?",
+   "en": "Which publications about a given field appeared after 2010?",
+   "needs": [
+    "cls.publication",
+    "cls.field",
+    "rel.pubAbout",
+    "pub.year"
+   ]
+  },
+  {
+   "id": "CQ16",
+   "ru": "Каковы год открытия, глубина, обводнённость и координаты месторождения?",
+   "en": "What are the discovery year, depth, water cut and coordinates of a field?",
+   "needs": [
+    "cls.field",
+    "field.discoveryYear",
+    "field.depth",
+    "field.waterCut",
+    "field.coords"
+   ]
+  },
+  {
+   "id": "CQ17",
+   "ru": "Каковы свита, толщина, тип коллектора, проницаемость и пористость пласта?",
+   "en": "What are the formation, thickness, reservoir type, permeability and porosity of a horizon?",
+   "needs": [
+    "cls.horizon",
+    "horizon.formation",
+    "horizon.thickness",
+    "horizon.reservoirType",
+    "horizon.permeability",
+    "horizon.porosity"
+   ]
+  },
+  {
+   "id": "CQ18",
+   "ru": "Каковы тип нефти и запасы залежи?",
+   "en": "What are the oil type and reserves of a deposit?",
+   "needs": [
+    "cls.deposit",
+    "deposit.oilType",
+    "deposit.reserves"
+   ]
+  },
+  {
+   "id": "CQ19",
+   "ru": "Какие публикации относятся одновременно к нескольким объектам?",
+   "en": "Which publications are about several objects at once?",
+   "needs": [
+    "cls.publication",
+    "rel.pubAbout"
+   ]
+  },
+  {
+   "id": "CQ20",
+   "ru": "Какие публикации данного автора относятся к данной провинции?",
+   "en": "Which publications of a given author concern a given province?",
+   "needs": [
+    "cls.publication",
+    "cls.province",
+    "rel.authored",
+    "rel.pubAbout",
+    "rel.pubAbout.inherit"
+   ]
+  }
+ ]
+}

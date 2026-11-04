@@ -1,0 +1,25 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Author a owl:Class ;
+    rdfs:label "Author"@en, "Автор"@ru ;
+    rdfs:comment "A person who authored publications."@en .
+
+:Organization a owl:Class ;
+    rdfs:label "Organization"@en, "Организация"@ru ;
+    rdfs:comment "University or institute."@en .
+
+:affiliatedWith a owl:ObjectProperty ;
+    rdfs:label "affiliated with"@en, "работает в"@ru ;
+    rdfs:domain :Author ;
+    rdfs:range :Organization .
+
+:organizationName a owl:DatatypeProperty ;
+    rdfs:label "organizationName"@en, "название организации"@ru ;
+    rdfs:comment "Name of the organisation."@en ;
+    rdfs:domain :Organization ;
+    rdfs:range xsd:string .
+

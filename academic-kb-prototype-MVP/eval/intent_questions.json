@@ -1,0 +1,34 @@
+{
+  "_comment": "Вопросы с ожидаемым намерением для `python -m scripts.eval_chat intent`. Метки: FIND_PUBLICATION, FIND_OBJECT, COMPARE_OBJECTS, EXPLAIN, OFFTOPIC, UNKNOWN. Добавляйте свои формулировки: точность на чужих вопросами честнее, чем на моих.",
+  "questions": [
+    {"q": "Какие исследования проводились в Шаимском районе?", "expected": "FIND_PUBLICATION"},
+    {"q": "Найди статьи про минерализацию подземных вод после 2015 года", "expected": "FIND_PUBLICATION"},
+    {"q": "Публикации по гидрогеологии Западной Сибири", "expected": "FIND_PUBLICATION"},
+    {"q": "Show me papers on Bazhenov formation shale oil", "expected": "FIND_PUBLICATION"},
+    {"q": "Что почитать про заводнение пластов?", "expected": "FIND_PUBLICATION"},
+
+    {"q": "Что такое пласт БС10?", "expected": "FIND_OBJECT"},
+    {"q": "Расскажи про Шаимское месторождение", "expected": "FIND_OBJECT"},
+    {"q": "Какие пласты есть на Шаимском месторождении?", "expected": "FIND_OBJECT"},
+    {"q": "Где находится Шаимский нефтеносный район и что в него входит?", "expected": "FIND_OBJECT"},
+    {"q": "Tell me about the Samotlor oil field", "expected": "FIND_OBJECT"},
+
+    {"q": "Сравни геологию Шаима и Самотлора", "expected": "COMPARE_OBJECTS"},
+    {"q": "Чем баженовская свита отличается от тюменской свиты?", "expected": "COMPARE_OBJECTS"},
+    {"q": "Различия между Шаимским и Сургутским районами по запасам", "expected": "COMPARE_OBJECTS"},
+    {"q": "Compare the Shaim and Samotlor fields", "expected": "COMPARE_OBJECTS"},
+    {"q": "Сопоставь методы заводнения и гидроразрыва пласта", "expected": "COMPARE_OBJECTS"},
+
+    {"q": "Что такое заводнение пласта?", "expected": "EXPLAIN"},
+    {"q": "Объясни, как работает сейсморазведка 3D", "expected": "EXPLAIN"},
+    {"q": "What is hydraulic fracturing?", "expected": "EXPLAIN"},
+    {"q": "Что значит обводнённость скважины и как её считают?", "expected": "EXPLAIN"},
+
+    {"q": "Как приготовить борщ?", "expected": "OFFTOPIC"},
+    {"q": "Какая сегодня погода в Москве?", "expected": "OFFTOPIC"},
+    {"q": "Кто выиграл чемпионат мира по футболу?", "expected": "OFFTOPIC"},
+
+    {"q": "а это?", "expected": "UNKNOWN"},
+    {"q": "ну и что дальше", "expected": "UNKNOWN"}
+  ]
+}

@@ -1,0 +1,40 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Field a owl:Class ;
+    rdfs:label "Field"@en, "Месторождение"@ru ;
+    rdfs:comment "Oil and gas field."@en .
+
+:discoveryYear a owl:DatatypeProperty ;
+    rdfs:label "discoveryYear"@en, "год открытия"@ru ;
+    rdfs:comment "Year of discovery."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:gYear .
+
+:depth a owl:DatatypeProperty ;
+    rdfs:label "depth"@en, "глубина"@ru ;
+    rdfs:comment "Depth in metres."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:waterCut a owl:DatatypeProperty ;
+    rdfs:label "waterCut"@en, "обводнённость"@ru ;
+    rdfs:comment "Water cut, percent."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:latitude a owl:DatatypeProperty ;
+    rdfs:label "latitude"@en, "широта"@ru ;
+    rdfs:comment "Latitude."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+
+:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude"@en, "долгота"@ru ;
+    rdfs:comment "Longitude."@en ;
+    rdfs:domain :Field ;
+    rdfs:range xsd:decimal .
+

@@ -1,0 +1,40 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Horizon a owl:Class ;
+    rdfs:label "Horizon"@en, "Пласт"@ru ;
+    rdfs:comment "Productive horizon."@en .
+
+:formationName a owl:DatatypeProperty ;
+    rdfs:label "formationName"@en, "свита"@ru ;
+    rdfs:comment "Name of the geological formation."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:string .
+
+:thickness a owl:DatatypeProperty ;
+    rdfs:label "thickness"@en, "толщина"@ru ;
+    rdfs:comment "Thickness, m."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:decimal .
+
+:reservoirType a owl:DatatypeProperty ;
+    rdfs:label "reservoirType"@en, "тип коллектора"@ru ;
+    rdfs:comment "Reservoir type."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:string .
+
+:permeability a owl:DatatypeProperty ;
+    rdfs:label "permeability"@en, "проницаемость"@ru ;
+    rdfs:comment "Permeability, mD."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:decimal .
+
+:porosity a owl:DatatypeProperty ;
+    rdfs:label "porosity"@en, "пористость"@ru ;
+    rdfs:comment "Porosity, %."@en ;
+    rdfs:domain :Horizon ;
+    rdfs:range xsd:decimal .
+

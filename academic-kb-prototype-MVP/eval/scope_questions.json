@@ -1,0 +1,149 @@
+{
+  "_comment": "Набор для проверки классификатора темы (python -m scripts.eval_chat scope). expected: domain — вопрос по теме базы, offtopic — вне темы. Ловушки: «пластик», «газета», «разработка сайта» начинаются как ключевые слова, но к теме не относятся. Добавляйте свои вопросы.",
+  "questions": [
+    {
+      "question": "Какие исследования проводились в Шаимском районе?",
+      "expected": "domain"
+    },
+    {
+      "question": "Геологическое строение Самотлорского месторождения",
+      "expected": "domain"
+    },
+    {
+      "question": "Публикации по пласту БС10",
+      "expected": "domain"
+    },
+    {
+      "question": "Какова пористость коллекторов васюганской свиты?",
+      "expected": "domain"
+    },
+    {
+      "question": "Расскажи про баженовскую свиту",
+      "expected": "domain"
+    },
+    {
+      "question": "Как проводится заводнение пластов для повышения нефтеотдачи?",
+      "expected": "domain"
+    },
+    {
+      "question": "Гидрогеология Западно-Сибирского артезианского бассейна",
+      "expected": "domain"
+    },
+    {
+      "question": "What research exists on the Tyumen Formation?",
+      "expected": "domain"
+    },
+    {
+      "question": "Reservoir properties of Upper Jurassic deposits in West Siberia",
+      "expected": "domain"
+    },
+    {
+      "question": "Какие геофизические методы применяются при разведке нефтяных залежей?",
+      "expected": "domain"
+    },
+    {
+      "question": "Запасы нефти Приобского месторождения",
+      "expected": "domain"
+    },
+    {
+      "question": "Сейсморазведка в Широтном Приобье",
+      "expected": "domain"
+    },
+    {
+      "question": "Геохимия органического вещества юрских отложений",
+      "expected": "domain"
+    },
+    {
+      "question": "Какие публикации есть про гидроразрыв пласта?",
+      "expected": "domain"
+    },
+    {
+      "question": "Как менялась обводнённость скважин на Самотлоре?",
+      "expected": "domain"
+    },
+    {
+      "question": "Нефтегазоносность Тюменской области",
+      "expected": "domain"
+    },
+    {
+      "question": "Расскажи про пласт ЮК1 и его коллекторские свойства",
+      "expected": "domain"
+    },
+    {
+      "question": "Which authors studied oil fields of the Shaim district?",
+      "expected": "domain"
+    },
+    {
+      "question": "Как приготовить борщ?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "как готовить еду?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Какая сегодня погода в Москве?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Кто выиграл чемпионат мира по футболу?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Напиши стихотворение про осень",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Сколько будет 17 умножить на 23?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Расскажи анекдот",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Как научиться плавать?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Какой курс биткоина сегодня?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Посоветуй фильм на вечер",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Как разработать сайт на React?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Какой пластик безопаснее для бутылок?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Что почитать в газете сегодня?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "How do I bake a chocolate cake?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Who is the president of France?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Как вылечить простуду?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Какой гороскоп у Овна?",
+      "expected": "offtopic"
+    },
+    {
+      "question": "Как выбрать смартфон до 30000 рублей?",
+      "expected": "offtopic"
+    }
+  ]
+}

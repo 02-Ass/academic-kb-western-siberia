@@ -1,0 +1,28 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:ResearchType a owl:Class ;
+    rdfs:label "ResearchType"@en, "Тип исследования"@ru ;
+    rdfs:comment "Kind of research."@en .
+
+:Geological a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "Geological"@en, "Геологическое"@ru .
+
+:Geophysical a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "Geophysical"@en, "Геофизическое"@ru .
+
+:Hydrogeological a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "Hydrogeological"@en, "Гидрогеологическое"@ru .
+
+:Geodynamic a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "Geodynamic"@en, "Геодинамическое"@ru .
+
+:Geocryological a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "Geocryological"@en, "Геокриологическое"@ru .
+
+:FieldDevelopment a owl:NamedIndividual, :ResearchType ;
+    rdfs:label "FieldDevelopment"@en, "Разработка месторождений"@ru .
+

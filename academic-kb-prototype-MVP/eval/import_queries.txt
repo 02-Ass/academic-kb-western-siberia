@@ -1,0 +1,66 @@
+# Запросы для массового наполнения базы (scripts/bulk_import.py). Одна строка — один запрос.
+# Строки, начинающиеся с #, и пустые строки игнорируются. Добавляйте свои.
+# --- район и месторождения ---
+Shaim oil and gas region West Siberia
+Shaim oil field Tyumen formation
+Shaimsky petroleum district Jurassic
+Shushma oil field West Siberia
+Lovinskoye oil field Shaim
+Шаимский нефтегазоносный район
+Шаимское месторождение нефти
+Шушминское месторождение
+Ловинское месторождение
+Приуральская нефтегазоносная область
+# --- геология ---
+West Siberian basin Jurassic reservoir geology
+West Siberian basin stratigraphy lithology Jurassic
+Tyumen formation reservoir properties West Siberia
+Vasyugan formation reservoir West Siberia
+Bazhenov formation shale oil West Siberia
+pre-Jurassic basement oil West Siberia
+West Siberian basin tectonics faults structure
+West Siberian basin geodynamics sedimentary basin evolution
+тюменская свита Западная Сибирь коллекторы
+васюганская свита коллекторы
+баженовская свита нефть
+доюрский комплекс фундамент нефтеносность
+тектоническое строение Западно-Сибирской плиты
+стратиграфия юрских отложений Западная Сибирь
+# --- гидрогеология, геохимия ---
+West Siberian basin groundwater hydrogeology oil fields
+formation water mineralization West Siberia oil fields
+West Siberia petroleum geochemistry source rocks migration
+гидрогеология Шаимского района
+пластовые воды минерализация нефтяные месторождения Западной Сибири
+геохимия нефтей Западной Сибири
+# --- геофизика ---
+West Siberia seismic exploration reservoir characterization
+well logging interpretation West Siberia reservoirs
+сейсморазведка Западная Сибирь нефтегазоносность
+геофизические исследования скважин Западная Сибирь
+# --- разработка ---
+West Siberia oil field development waterflooding
+West Siberia enhanced oil recovery
+West Siberia hard-to-recover reserves tight oil
+West Siberia hydraulic fracturing
+West Siberia reservoir simulation digital model
+West Siberia oil reserves resources estimation
+West Siberia drilling well completion
+разработка нефтяных месторождений Западной Сибири заводнение
+методы повышения нефтеотдачи Западная Сибирь
+трудноизвлекаемые запасы нефти Западная Сибирь
+гидроразрыв пласта Западная Сибирь
+подсчёт запасов нефти Западная Сибирь
+цифровая геологическая модель месторождения
+# --- крупные месторождения региона ---
+Samotlor oil field
+Priobskoye oil field
+Surgut region oil fields geology
+Khanty-Mansi oil production geology
+Самотлорское месторождение
+Приобское месторождение
+Сургутский свод нефтегазоносность
+# --- смежные темы ---
+West Siberia permafrost geocryology oil gas
+геокриология Западная Сибирь нефтегазовые месторождения
+West Siberia gas condensate fields

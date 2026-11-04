@@ -1,0 +1,31 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Publication a owl:Class ;
+    rdfs:label "Publication"@en, "Публикация"@ru ;
+    rdfs:comment "A scientific publication."@en .
+
+:Author a owl:Class ;
+    rdfs:label "Author"@en, "Автор"@ru ;
+    rdfs:comment "A person who authored publications."@en .
+
+:hasAuthor a owl:ObjectProperty ;
+    rdfs:label "has author"@en, "имеет автора"@ru ;
+    rdfs:domain :Publication ;
+    rdfs:range :Author .
+
+:authorOf a owl:ObjectProperty ;
+    owl:inverseOf :hasAuthor ;
+    rdfs:label "author of"@en, "автор"@ru ;
+    rdfs:domain :Author ;
+    rdfs:range :Publication .
+
+:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName"@en, "ФИО"@ru ;
+    rdfs:comment "Full name of the author."@en ;
+    rdfs:domain :Author ;
+    rdfs:range xsd:string .
+

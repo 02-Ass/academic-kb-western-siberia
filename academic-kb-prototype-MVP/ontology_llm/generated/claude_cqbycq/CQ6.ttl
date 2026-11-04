@@ -1,0 +1,19 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Horizon a owl:Class ;
+    rdfs:label "Horizon"@en, "Пласт"@ru ;
+    rdfs:comment "Productive horizon."@en .
+
+:Deposit a owl:Class ;
+    rdfs:label "Deposit"@en, "Залежь"@ru ;
+    rdfs:comment "Hydrocarbon deposit."@en .
+
+:partOf a owl:ObjectProperty ;
+    rdfs:label "part of"@en, "входит в"@ru ;
+    rdfs:comment "A deposit is confined to a horizon."@en ;
+    rdfs:domain :Deposit ;
+    rdfs:range :Horizon .

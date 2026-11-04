@@ -1,0 +1,27 @@
+@prefix : <http://example.org/westsib#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Province a owl:Class ;
+    rdfs:label "Province"@en, "Провинция"@ru ;
+    rdfs:comment "Petroleum province."@en .
+
+:GeologicalObject a owl:Class ;
+    rdfs:label "GeologicalObject"@en, "Геологический объект"@ru ;
+    rdfs:comment "Any object of the hierarchy."@en .
+
+:Province rdfs:subClassOf :GeologicalObject .
+
+:partOf a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "part of"@en, "входит в"@ru ;
+    rdfs:comment "Transitive containment, so that all nested objects of a province can be retrieved."@en ;
+    rdfs:domain :GeologicalObject ;
+    rdfs:range :GeologicalObject .
+
+:hasPart a owl:ObjectProperty, owl:TransitiveProperty ;
+    owl:inverseOf :partOf ;
+    rdfs:label "has part"@en, "включает"@ru ;
+    rdfs:domain :GeologicalObject ;
+    rdfs:range :GeologicalObject .

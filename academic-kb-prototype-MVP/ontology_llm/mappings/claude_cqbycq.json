@@ -1,0 +1,58 @@
+{
+ "title": "LLM (Claude), Memoryless CQbyCQ",
+ "kind": "file",
+ "file": "ontology_llm/generated/claude_cqbycq/merged.ttl",
+ "ns": "http://example.org/westsib#",
+ "slots": {
+  "cls.object": "GeologicalObject",
+  "cls.province": "Province",
+  "cls.oblast": "Oblast",
+  "cls.rayon": "District",
+  "cls.field": "Field",
+  "cls.horizon": "Horizon",
+  "cls.deposit": "Deposit",
+  "cls.publication": "Publication",
+  "cls.author": "Author",
+  "cls.researchType": "ResearchType",
+  "rel.partOf": "partOf",
+  "rel.partOf.transitive": "partOf",
+  "rel.pubAbout": "isAbout",
+  "rel.pubAbout.inherit": "isAbout",
+  "rel.pubType": "hasResearchType",
+  "rel.authored": "hasAuthor",
+  "author.name": "fullName",
+  "author.affiliation": "affiliatedWith",
+  "pub.title": "title",
+  "pub.doi": "doi",
+  "pub.link": "url",
+  "pub.journal": "journalName",
+  "pub.year": [
+   "publicationYear",
+   "publishedInYear"
+  ],
+  "field.discoveryYear": "discoveryYear",
+  "field.depth": "depth",
+  "field.waterCut": "waterCut",
+  "field.coords": {
+   "all": [
+    "latitude",
+    "longitude"
+   ]
+  },
+  "horizon.formation": "formationName",
+  "horizon.thickness": "thickness",
+  "horizon.reservoirType": "reservoirType",
+  "horizon.permeability": "permeability",
+  "horizon.porosity": "porosity",
+  "deposit.oilType": "oilType",
+  "deposit.reserves": "reserves"
+ },
+ "justified": {
+  "Organization": "организация автора как сущность (ODP «агент»), оправдано CQ11",
+  "organizationName": "название организации",
+  "hasPart": "обратное к partOf",
+  "authorOf": "обратное к hasAuthor",
+  "GeophysicalPublication": "определяемый класс под CQ14",
+  "MultiObjectPublication": "определяемый класс под CQ19"
+ }
+}

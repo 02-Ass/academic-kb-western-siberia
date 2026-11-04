@@ -1,0 +1,29 @@
+# 1. СЕКРЕТЫ (Никогда не выкладывать на GitHub!)
+.env
+.env.local
+.env.production
+.auth_secret
+
+# 2. Логи (то, что у вас уже было)
+logs/
+*.log
+
+# 3. Python (Бэкенд)
+__pycache__/
+*.py[cod]
+venv/
+venv*/
+env/
+.venv/
+*.sqlite3
+*.db
+
+# 4. Node.js / React (Фронтенд)
+node_modules/
+dist/
+build/
+.vite/
+
+# 5. Системный мусор (Mac/Windows)
+.DS_Store
+Thumbs.db

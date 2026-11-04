@@ -1,0 +1,1126 @@
+[
+ {
+  "name": "manual_original",
+  "title": "Ваша онтология (oil-gas-ontology.owl, Protégé)",
+  "counts": {
+   "classes": 16,
+   "object_props": 7,
+   "data_props": 5,
+   "triples": 63
+  },
+  "cq": [
+   {
+    "id": "CQ1",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ2",
+    "status": "частично",
+    "missing": [
+     "rel.pubAbout.inherit"
+    ]
+   },
+   {
+    "id": "CQ3",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ4",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ5",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ6",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ7",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ8",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ9",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ10",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ11",
+    "status": "нет",
+    "missing": [
+     "cls.author",
+     "author.affiliation"
+    ]
+   },
+   {
+    "id": "CQ12",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ13",
+    "status": "частично",
+    "missing": [
+     "pub.doi"
+    ]
+   },
+   {
+    "id": "CQ14",
+    "status": "частично",
+    "missing": [
+     "rel.pubAbout.inherit"
+    ]
+   },
+   {
+    "id": "CQ15",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ16",
+    "status": "частично",
+    "missing": [
+     "field.discoveryYear",
+     "field.depth",
+     "field.waterCut",
+     "field.coords"
+    ]
+   },
+   {
+    "id": "CQ17",
+    "status": "частично",
+    "missing": [
+     "horizon.formation",
+     "horizon.thickness",
+     "horizon.reservoirType",
+     "horizon.permeability",
+     "horizon.porosity"
+    ]
+   },
+   {
+    "id": "CQ18",
+    "status": "частично",
+    "missing": [
+     "deposit.oilType",
+     "deposit.reserves"
+    ]
+   },
+   {
+    "id": "CQ19",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ20",
+    "status": "частично",
+    "missing": [
+     "rel.pubAbout.inherit"
+    ]
+   }
+  ],
+  "slots": {
+   "cls.object": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.province": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.oblast": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.rayon": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.field": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.horizon": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.deposit": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.publication": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.author": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "cls.researchType": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.partOf": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.partOf.transitive": {
+    "ok": true,
+    "note": "проверено выводом на тестовых данных"
+   },
+   "rel.pubAbout": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.pubAbout.inherit": {
+    "ok": false,
+    "note": "проверено выводом на тестовых данных"
+   },
+   "rel.pubType": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.authored": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.title": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.year": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.journal": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.link": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.doi": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "author.name": {
+    "ok": true,
+    "note": ""
+   },
+   "author.affiliation": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.discoveryYear": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.depth": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.waterCut": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.coords": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.formation": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.thickness": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.reservoirType": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.permeability": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.porosity": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "deposit.oilType": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "deposit.reserves": {
+    "ok": false,
+    "note": "нет в онтологии"
+   }
+  },
+  "superfluous": {
+   "classes": {
+    "total": 16,
+    "raw": [
+     "Геодинамическое",
+     "Геокриологическое",
+     "Геологическое",
+     "Геофизическое",
+     "Гидрогеологическое",
+     "ЗонаНефтегазонакопления",
+     "Разработка"
+    ],
+    "after_justified": []
+   },
+   "object_props": {
+    "total": 7,
+    "raw": [
+     "имеетЗалежь",
+     "имеетМесторождение",
+     "имеетПласт",
+     "содержит"
+    ],
+    "after_justified": [
+     "имеетЗалежь",
+     "имеетМесторождение",
+     "имеетПласт"
+    ]
+   },
+   "data_props": {
+    "total": 5,
+    "raw": [],
+    "after_justified": []
+   }
+  },
+  "duplicates": {},
+  "pitfalls": {
+   "P08": [
+    "Геодинамическое",
+    "Геокриологическое",
+    "Геологическое",
+    "Геофизическое",
+    "Гидрогеологическое",
+    "Залежь",
+    "ЗонаНефтегазонакопления",
+    "Исследование",
+    "Месторождение",
+    "НефтегазовыйОбъект",
+    "Область",
+    "Пласт",
+    "Провинция",
+    "Публикация",
+    "Разработка",
+    "Район",
+    "входитВ",
+    "имеетЗалежь",
+    "имеетМесторождение",
+    "имеетПласт",
+    "относитсяКОбъекту",
+    "относитсяКТипуИсследования",
+    "содержит",
+    "автор",
+    "год",
+    "журнал",
+    "название",
+    "ссылка"
+   ],
+   "P10": [
+    "нет аксиом непересечения классов"
+   ],
+   "P11": [
+    "имеетЗалежь",
+    "имеетМесторождение",
+    "имеетПласт"
+   ],
+   "P13": [
+    "имеетЗалежь",
+    "имеетМесторождение",
+    "имеетПласт",
+    "относитсяКОбъекту",
+    "относитсяКТипуИсследования"
+   ],
+   "P34": [],
+   "P35": []
+  },
+  "behaviour": {
+   "transitive": true,
+   "inherit": false,
+   "pollution": [],
+   "owlrl_consistent": true,
+   "hermit": {
+    "tbox": {
+     "consistent": true,
+     "unsatisfiable": []
+    },
+    "tbox+abox": {
+     "consistent": true,
+     "unsatisfiable": []
+    }
+   }
+  },
+  "justified": {
+   "Геологическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Геофизическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Геодинамическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Геокриологическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Гидрогеологическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Разработка": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "ЗонаНефтегазонакопления": "уровень иерархии, реально встречающийся в данных (зона нефтегазонакопления)",
+   "содержит": "обратное к входитВ"
+  }
+ },
+ {
+  "name": "manual_v22",
+  "title": "Ваша онтология + расширения приложения (v22, уровень схемы)",
+  "counts": {
+   "classes": 16,
+   "object_props": 8,
+   "data_props": 10,
+   "triples": 117
+  },
+  "cq": [
+   {
+    "id": "CQ1",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ2",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ3",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ4",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ5",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ6",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ7",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ8",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ9",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ10",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ11",
+    "status": "нет",
+    "missing": [
+     "cls.author",
+     "author.affiliation"
+    ]
+   },
+   {
+    "id": "CQ12",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ13",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ14",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ15",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ16",
+    "status": "частично",
+    "missing": [
+     "field.depth",
+     "field.waterCut"
+    ]
+   },
+   {
+    "id": "CQ17",
+    "status": "частично",
+    "missing": [
+     "horizon.formation",
+     "horizon.thickness",
+     "horizon.reservoirType",
+     "horizon.permeability",
+     "horizon.porosity"
+    ]
+   },
+   {
+    "id": "CQ18",
+    "status": "частично",
+    "missing": [
+     "deposit.oilType",
+     "deposit.reserves"
+    ]
+   },
+   {
+    "id": "CQ19",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ20",
+    "status": "полностью",
+    "missing": []
+   }
+  ],
+  "slots": {
+   "cls.object": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.province": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.oblast": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.rayon": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.field": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.horizon": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.deposit": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.publication": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.author": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "cls.researchType": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.partOf": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.partOf.transitive": {
+    "ok": true,
+    "note": "проверено выводом на тестовых данных"
+   },
+   "rel.pubAbout": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.pubAbout.inherit": {
+    "ok": true,
+    "note": "проверено выводом на тестовых данных"
+   },
+   "rel.pubType": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.authored": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.title": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.year": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.journal": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.link": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.doi": {
+    "ok": true,
+    "note": ""
+   },
+   "author.name": {
+    "ok": true,
+    "note": ""
+   },
+   "author.affiliation": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.discoveryYear": {
+    "ok": true,
+    "note": ""
+   },
+   "field.depth": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.waterCut": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "field.coords": {
+    "ok": true,
+    "note": ""
+   },
+   "horizon.formation": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.thickness": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.reservoirType": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.permeability": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "horizon.porosity": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "deposit.oilType": {
+    "ok": false,
+    "note": "нет в онтологии"
+   },
+   "deposit.reserves": {
+    "ok": false,
+    "note": "нет в онтологии"
+   }
+  },
+  "superfluous": {
+   "classes": {
+    "total": 16,
+    "raw": [
+     "Геодинамическое",
+     "Геокриологическое",
+     "Геологическое",
+     "Геофизическое",
+     "Гидрогеологическое",
+     "ЗонаНефтегазонакопления",
+     "Разработка"
+    ],
+    "after_justified": []
+   },
+   "object_props": {
+    "total": 8,
+    "raw": [
+     "имеетЗалежь",
+     "имеетМесторождение",
+     "имеетПласт",
+     "имеетПубликацию",
+     "содержит"
+    ],
+    "after_justified": [
+     "имеетЗалежь",
+     "имеетМесторождение",
+     "имеетПласт"
+    ]
+   },
+   "data_props": {
+    "total": 10,
+    "raw": [
+     "записьБД",
+     "описание"
+    ],
+    "after_justified": []
+   }
+  },
+  "duplicates": {},
+  "pitfalls": {
+   "P08": [
+    "Геодинамическое",
+    "Геокриологическое",
+    "Геологическое",
+    "Геофизическое",
+    "Гидрогеологическое",
+    "Залежь",
+    "ЗонаНефтегазонакопления",
+    "Исследование",
+    "Месторождение",
+    "НефтегазовыйОбъект",
+    "Область",
+    "Пласт",
+    "Провинция",
+    "Публикация",
+    "Разработка",
+    "Район",
+    "входитВ",
+    "имеетЗалежь",
+    "имеетМесторождение",
+    "имеетПласт",
+    "относитсяКТипуИсследования",
+    "содержит",
+    "автор",
+    "год",
+    "журнал",
+    "название",
+    "ссылка"
+   ],
+   "P11": [
+    "имеетЗалежь",
+    "имеетМесторождение",
+    "имеетПласт",
+    "имеетПубликацию",
+    "записьБД (нет области определения)"
+   ],
+   "P13": [
+    "имеетЗалежь",
+    "имеетМесторождение",
+    "имеетПласт",
+    "относитсяКТипуИсследования"
+   ],
+   "P34": [],
+   "P35": []
+  },
+  "behaviour": {
+   "transitive": true,
+   "inherit": true,
+   "pollution": [],
+   "owlrl_consistent": true,
+   "hermit": {
+    "tbox": {
+     "consistent": true,
+     "unsatisfiable": []
+    },
+    "tbox+abox": {
+     "consistent": true,
+     "unsatisfiable": []
+    }
+   }
+  },
+  "justified": {
+   "Геологическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Геофизическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Геодинамическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Геокриологическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Гидрогеологическое": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "Разработка": "типы исследований из БД смоделированы подклассами класса Исследование (способ моделирования, не лишнее)",
+   "ЗонаНефтегазонакопления": "уровень иерархии, реально встречающийся в данных (зона нефтегазонакопления)",
+   "содержит": "обратное к входитВ",
+   "имеетПубликацию": "обратное к относитсяКОбъекту (расширение)",
+   "описание": "поле БД (расширение)",
+   "записьБД": "ключ записи БД: явная связь онтологии с БД (расширение, нужно приложению)"
+  }
+ },
+ {
+  "name": "claude_cqbycq",
+  "title": "LLM (Claude), Memoryless CQbyCQ",
+  "counts": {
+   "classes": 13,
+   "object_props": 7,
+   "data_props": 20,
+   "triples": 251
+  },
+  "cq": [
+   {
+    "id": "CQ1",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ2",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ3",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ4",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ5",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ6",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ7",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ8",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ9",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ10",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ11",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ12",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ13",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ14",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ15",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ16",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ17",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ18",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ19",
+    "status": "полностью",
+    "missing": []
+   },
+   {
+    "id": "CQ20",
+    "status": "полностью",
+    "missing": []
+   }
+  ],
+  "slots": {
+   "cls.object": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.province": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.oblast": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.rayon": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.field": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.horizon": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.deposit": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.publication": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.author": {
+    "ok": true,
+    "note": ""
+   },
+   "cls.researchType": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.partOf": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.partOf.transitive": {
+    "ok": true,
+    "note": "проверено выводом на тестовых данных"
+   },
+   "rel.pubAbout": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.pubAbout.inherit": {
+    "ok": true,
+    "note": "проверено выводом на тестовых данных"
+   },
+   "rel.pubType": {
+    "ok": true,
+    "note": ""
+   },
+   "rel.authored": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.title": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.year": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.journal": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.link": {
+    "ok": true,
+    "note": ""
+   },
+   "pub.doi": {
+    "ok": true,
+    "note": ""
+   },
+   "author.name": {
+    "ok": true,
+    "note": ""
+   },
+   "author.affiliation": {
+    "ok": true,
+    "note": ""
+   },
+   "field.discoveryYear": {
+    "ok": true,
+    "note": ""
+   },
+   "field.depth": {
+    "ok": true,
+    "note": ""
+   },
+   "field.waterCut": {
+    "ok": true,
+    "note": ""
+   },
+   "field.coords": {
+    "ok": true,
+    "note": ""
+   },
+   "horizon.formation": {
+    "ok": true,
+    "note": ""
+   },
+   "horizon.thickness": {
+    "ok": true,
+    "note": ""
+   },
+   "horizon.reservoirType": {
+    "ok": true,
+    "note": ""
+   },
+   "horizon.permeability": {
+    "ok": true,
+    "note": ""
+   },
+   "horizon.porosity": {
+    "ok": true,
+    "note": ""
+   },
+   "deposit.oilType": {
+    "ok": true,
+    "note": ""
+   },
+   "deposit.reserves": {
+    "ok": true,
+    "note": ""
+   }
+  },
+  "superfluous": {
+   "classes": {
+    "total": 13,
+    "raw": [
+     "GeophysicalPublication",
+     "MultiObjectPublication",
+     "Organization"
+    ],
+    "after_justified": []
+   },
+   "object_props": {
+    "total": 7,
+    "raw": [
+     "authorOf",
+     "hasPart"
+    ],
+    "after_justified": []
+   },
+   "data_props": {
+    "total": 20,
+    "raw": [
+     "organizationName"
+    ],
+    "after_justified": []
+   }
+  },
+  "duplicates": {
+   "pub.year": [
+    "publicationYear",
+    "publishedInYear"
+   ]
+  },
+  "pitfalls": {
+   "P04": [
+    "Oblast"
+   ],
+   "P05": [
+    "hasPart ↔ partOf"
+   ],
+   "P10": [
+    "нет аксиом непересечения классов"
+   ],
+   "P13": [
+    "affiliatedWith",
+    "hasResearchType",
+    "isAbout"
+   ],
+   "P19": [
+    "isAbout: области определения ['Publication'], значений ['District', 'Field', 'GeologicalObject', 'Province']",
+    "partOf: области определения ['Deposit', 'Field', 'GeologicalObject', 'Horizon'], значений ['District', 'Field', 'GeologicalObject', 'Horizon']"
+   ],
+   "P29": [
+    "partOf: области определения ['Deposit', 'Field', 'GeologicalObject', 'Horizon'] ≠ значений ['District', 'Field', 'GeologicalObject', 'Horizon']"
+   ],
+   "P34": [],
+   "P35": [],
+   "P39": [
+    "не объявлен owl:Ontology (нет IRI онтологии)"
+   ]
+  },
+  "behaviour": {
+   "transitive": true,
+   "inherit": true,
+   "pollution": [
+    "test_province : District",
+    "test_province : Field",
+    "test_province : Horizon",
+    "test_oblast : GeologicalObject",
+    "test_oblast : District",
+    "test_oblast : Deposit",
+    "test_oblast : Field",
+    "test_oblast : Horizon",
+    "test_oblast : Province",
+    "test_rayon : Field",
+    "test_rayon : Horizon",
+    "test_rayon : Deposit",
+    "test_rayon : Province",
+    "test_field : District",
+    "test_field : Deposit",
+    "test_field : Horizon",
+    "test_field : Province",
+    "test_horizon : Deposit",
+    "test_horizon : District",
+    "test_horizon : Field",
+    "test_horizon : Province",
+    "test_deposit : District",
+    "test_deposit : Field",
+    "test_deposit : Horizon",
+    "test_deposit : Province"
+   ],
+   "owlrl_consistent": true,
+   "hermit": {
+    "tbox": {
+     "consistent": true,
+     "error": "Java error message is:\nPicked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost="
+    },
+    "tbox+abox": {
+     "consistent": true,
+     "error": "Java error message is:\nPicked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost="
+    }
+   }
+  },
+  "justified": {
+   "Organization": "организация автора как сущность (ODP «агент»), оправдано CQ11",
+   "organizationName": "название организации",
+   "hasPart": "обратное к partOf",
+   "authorOf": "обратное к hasAuthor",
+   "GeophysicalPublication": "определяемый класс под CQ14",
+   "MultiObjectPublication": "определяемый класс под CQ19"
+  }
+ }
+]
