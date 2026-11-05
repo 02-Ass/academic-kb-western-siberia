@@ -99,7 +99,7 @@ export default function OntologyPanel({ initial = {} }) {
       </div>
 
       <details className="onto-box">
-        <summary>Что приложение добавляет к вашей онтологии (расширения)</summary>
+        <summary>Что приложение добавляет к нашей онтологии (расширения)</summary>
         <div className="muted-text">
           Основа: {summary.base.source}; в ней {summary.base.classes} классов, {summary.base.object_properties} объектных
           свойств и {summary.base.data_properties} свойств-данных. Всё ниже — расширения, они помечены в онтологии комментарием
