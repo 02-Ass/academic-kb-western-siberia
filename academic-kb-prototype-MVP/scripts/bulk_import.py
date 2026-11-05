@@ -58,19 +58,36 @@ def load_queries(path: Optional[Path]) -> List[str]:
 
 def select_candidates(candidates: List[dict], *, require_abstract: bool = False, min_year: Optional[int] = None,
                       require_field: bool = False, limit: Optional[int] = None) -> List[dict]:
-    """Оставляет кандидатов, подходящих под условия импорта."""
+    """Оставляет кандидатов, подходящих под условия импорта. 
+    Добавлена жесткая привязка к Шаиму по ключевым словам."""
     out = []
+    # Ключевые слова для принудительной привязки к Шаимскому месторождению (field_id=1)
+    SHAIM_KEYWORDS = ["shaim", "шаим", "шушмин", "шушим", "ловин"]
+    
     for c in candidates:
         p = c["publication"]
+        
+        # Если фильтр по аннотации включен, пропускаем пустые
         if require_abstract and not (p.abstract or "").strip():
             continue
+        # Фильтр по году
         if min_year and (p.year or 0) < min_year:
             continue
+            
+        # --- НОВАЯ ЛОГИКА: Принудительная привязка к Шаиму ---
+        text_to_check = f"{p.title or ''} {p.abstract or ''}".lower()
+        if any(kw in text_to_check for kw in SHAIM_KEYWORDS):
+            # Если нашли ключевое слово, принудительно добавляем field_id = 1
+            if 1 not in c["field_ids"]:
+                c["field_ids"] = list(c["field_ids"]) + [1]
+        
+        # Если включен строгий фильтр "только с месторождением", проверяем, появилось ли field_id
         if require_field and not c["field_ids"]:
             continue
+            
         out.append(c)
+        
     return out[:limit] if limit else out
-
 
 def commit_candidates(db: Session, candidates: List[dict]) -> Dict[str, object]:
     """Сохраняет кандидатов; сбой одной записи не отменяет остальные."""
