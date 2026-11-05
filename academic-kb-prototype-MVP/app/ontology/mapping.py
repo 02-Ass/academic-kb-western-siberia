@@ -50,7 +50,7 @@ _EXT_ROWS = [
 
 
 def mapping_rows(state: OntologyState) -> List[dict]:
-    rows = [{"element": e, "kind": k, "db": d, "origin": "ваша онтология"} for e, k, d in _BASE_ROWS]
+    rows = [{"element": e, "kind": k, "db": d, "origin": "наша онтология"} for e, k, d in _BASE_ROWS]
     used = {}
     for info in state.reg.types.values():
         used.setdefault(V.short(info["class_iri"]), []).append(info["name"])
@@ -67,5 +67,5 @@ def mapping_rows(state: OntologyState) -> List[dict]:
 
 
 def base_entities(state: OntologyState) -> List[str]:
-    """Короткие имена всех классов и свойств вашего файла (для проверки полноты таблицы)."""
+    """Короткие имена всех классов и свойств нашего файла (для проверки полноты таблицы)."""
     return sorted(V.short(i) for i in (state.base.classes | state.base.object_props | state.base.data_props))
