@@ -1,1 +1,6 @@
 academic-kb-prototype-MVP/academic_dpm_backup.dump
+venv/
+backup.dump
+backup.sql
+backup_clean.dump
+backup_no_embeddings.dump
