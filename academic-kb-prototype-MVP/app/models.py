@@ -343,3 +343,16 @@ class AppSetting(Base):
 
     key = Column(String(50), primary_key=True)
     value = Column(Text, nullable=False)
+class ChatLog(Base):
+    """Журнал запросов к чат-боту (для админ-панели)."""
+    __tablename__ = "chat_logs"
+
+    id = Column(Integer, primary_key=True)
+    user_email = Column(String(254), nullable=True)
+    query = Column(Text, nullable=False)
+    intent = Column(String(50), nullable=True)
+    route = Column(String(50), nullable=True)
+    sources_count = Column(Integer, default=0)
+    tokens_used = Column(Integer, default=0)
+    latency_ms = Column(Integer, default=0)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

@@ -133,16 +133,27 @@ def log_enabled() -> bool:
 
 
 def log_chat(record: Dict[str, Any]) -> None:
-    """Дописывает запись в JSONL-журнал. Ошибки записи не пробрасываются."""
+    """Сохраняет запись в базу данных. Ошибки записи не пробрасываются."""
     if not log_enabled():
         return
     try:
-        path = log_path()
-        path.parent.mkdir(parents=True, exist_ok=True)
-        record = {"timestamp": datetime.now().isoformat(timespec="seconds"), **record}
-        line = json.dumps(record, ensure_ascii=False)
-        with _log_lock:
-            with path.open("a", encoding="utf-8") as f:
-                f.write(line + "\n")
-    except Exception as e:  # noqa: BLE001
-        print(f"[telemetry] не удалось записать журнал: {type(e).__name__}: {str(e)[:100]}")
+        from .database import SessionLocal
+        from .models import ChatLog
+        
+        db = SessionLocal()
+        try:
+            log_entry = ChatLog(
+                user_email=record.get("user"),
+                query=record.get("query", ""),
+                intent=record.get("intent") or record.get("scope"),
+                route=record.get("route"),
+                sources_count=record.get("sources_found", 0),
+                tokens_used=record.get("tokens_used", 0),
+                latency_ms=record.get("latency_ms", 0),
+            )
+            db.add(log_entry)
+            db.commit()
+        finally:
+            db.close()
+    except Exception as e:
+        print(f"[telemetry] не удалось записать журнал в БД: {type(e).__name__}: {str(e)[:100]}")

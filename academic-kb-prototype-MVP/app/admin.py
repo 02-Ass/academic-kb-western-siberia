@@ -123,29 +123,34 @@ def edit_publication(publication_id: int, payload: PublicationPatch, db: Session
 # --- журнал запросов --------------------------------------------------------------------------
 
 @router.get("/logs")
-def read_logs(limit: int = Query(100, ge=1, le=500), q: str = ""):
-    """Последние записи ``chat_logs.jsonl`` (новые первыми): кто и что спрашивал, какой маршрут и намерение."""
-    path = telemetry.log_path()
-    if not path.exists():
-        return {"enabled": telemetry.log_enabled(), "items": []}
-    needle = q.strip().lower()
-    tail: deque = deque(maxlen=5000)
-    with path.open(encoding="utf-8", errors="replace") as f:
-        for line in f:
-            tail.append(line)
-    items = []
-    for line in reversed(tail):
-        try:
-            rec = json.loads(line)
-        except ValueError:
-            continue
-        if needle and needle not in json.dumps(rec, ensure_ascii=False).lower():
-            continue
-        items.append(rec)
-        if len(items) >= limit:
-            break
-    return {"enabled": telemetry.log_enabled(), "items": items}
-
+def read_logs(limit: int = Query(100, ge=1, le=500), q: str = "", db: Session = Depends(get_db)):
+    """Последние записи из таблицы chat_logs (новые первыми)."""
+    query = db.query(models.ChatLog).order_by(models.ChatLog.created_at.desc())
+    
+    if q.strip():
+        like = f"%{q.strip()}%"
+        query = query.filter(
+            models.ChatLog.query.ilike(like) | 
+            models.ChatLog.user_email.ilike(like)
+        )
+        
+    items = query.limit(limit).all()
+    
+    # Преобразуем объекты БД в словари для JSON-ответа
+    result_items = []
+    for item in items:
+        result_items.append({
+            "timestamp": item.created_at.isoformat() if item.created_at else None,
+            "user": item.user_email,
+            "query": item.query,
+            "intent": item.intent,
+            "route": item.route,
+            "sources_found": item.sources_count,
+            "tokens_used": item.tokens_used,
+            "latency_ms": item.latency_ms,
+        })
+        
+    return {"enabled": True, "items": result_items}
 
 # --- настройки --------------------------------------------------------------------------------
 
