@@ -91,8 +91,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"https://academic-kb-.*\.amvera\.tech",
-    allow_credentials=False,
+    allow_origins=["*"],          # Разрешаем всем
+    allow_credentials=False,      # ВАЖНО: выключаем credentials
     allow_methods=["*"],
     allow_headers=["*"],
 )
