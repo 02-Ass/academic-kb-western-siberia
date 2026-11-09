@@ -27,3 +27,4 @@ build/
 # 5. Системный мусор (Mac/Windows)
 .DS_Store
 Thumbs.db
+!.env.production
