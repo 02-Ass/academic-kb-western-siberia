@@ -86,8 +86,7 @@ app = FastAPI(
     version="0.3.0",
     lifespan=lifespan,
 )
-app.include_router(ontology_router)
-app.include_router(admin_module.router)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -96,7 +95,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+app.include_router(ontology_router)
+app.include_router(admin_module.router)
 
 def _field_detail(db: Session, f: models.Field) -> schemas.FieldDetailOut:
     anc = hierarchy.field_ancestors(db, f)
