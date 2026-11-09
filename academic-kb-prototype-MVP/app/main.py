@@ -93,8 +93,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://academic-kb-western-siberia.vercel.app",
-        "https://academic-kb-frontend-sidick.msk1.amvera.tech",  # <-- ВАШ НОВЫЙ ДОМЕН
+        "https://academic-kb-frontend-sidick.msk1.amvera.tech",
     ],
     allow_credentials=True,
     allow_methods=["*"],
