@@ -91,7 +91,12 @@ app.include_router(admin_module.router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+    "http://localhost:5173",
+    "https://academic-kb-western-siberia.vercel.app",
+    "https://academic-kb-western-siberia-git-main-sidick.vercel.app",
+    "https://academic-kb-frontend-sidick.msk1.amvera.tech",  
+],
     allow_methods=["*"],
     allow_headers=["*"],
 )
