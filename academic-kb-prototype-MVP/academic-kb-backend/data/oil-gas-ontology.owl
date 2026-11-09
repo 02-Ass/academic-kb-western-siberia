@@ -1,0 +1,288 @@
+@prefix : <urn:absolute:h/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ontology: <http://west-siberia-ontology.org/ontology#> .
+@base <urn:absolute:h/> .
+
+<http://west-siberia-ontology.org/ontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://west-siberia-ontology.org/ontology#входитВ
+ontology:входитВ rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf ontology:содержит ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:domain ontology:НефтегазовыйОбъект ;
+                 rdfs:range ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#имеетЗалежь
+ontology:имеетЗалежь rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://west-siberia-ontology.org/ontology#имеетМесторождение
+ontology:имеетМесторождение rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://west-siberia-ontology.org/ontology#имеетПласт
+ontology:имеетПласт rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://west-siberia-ontology.org/ontology#относитсяКОбъекту
+ontology:относитсяКОбъекту rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain ontology:Публикация ;
+                           rdfs:range ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#относитсяКТипуИсследования
+ontology:относитсяКТипуИсследования rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    rdfs:domain ontology:Публикация ;
+                                    rdfs:range ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#содержит
+ontology:содержит rdf:type owl:ObjectProperty ;
+                  rdfs:domain ontology:НефтегазовыйОбъект ;
+                  rdfs:range ontology:НефтегазовыйОбъект .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://west-siberia-ontology.org/ontology#автор
+ontology:автор rdf:type owl:DatatypeProperty ;
+               rdfs:domain ontology:Публикация .
+
+
+###  http://west-siberia-ontology.org/ontology#год
+ontology:год rdf:type owl:DatatypeProperty ;
+             rdfs:domain ontology:Публикация .
+
+
+###  http://west-siberia-ontology.org/ontology#журнал
+ontology:журнал rdf:type owl:DatatypeProperty ;
+                rdfs:domain ontology:Публикация .
+
+
+###  http://west-siberia-ontology.org/ontology#название
+ontology:название rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ontology:Публикация .
+
+
+###  http://west-siberia-ontology.org/ontology#ссылка
+ontology:ссылка rdf:type owl:DatatypeProperty ;
+                rdfs:domain ontology:Публикация .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://west-siberia-ontology.org/ontology#Геодинамическое
+ontology:Геодинамическое rdf:type owl:Class ;
+                         rdfs:subClassOf ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#Геокриологическое
+ontology:Геокриологическое rdf:type owl:Class ;
+                           rdfs:subClassOf ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#Геологическое
+ontology:Геологическое rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#Геофизическое
+ontology:Геофизическое rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#Гидрогеологическое
+ontology:Гидрогеологическое rdf:type owl:Class ;
+                            rdfs:subClassOf ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#Залежь
+ontology:Залежь rdf:type owl:Class ;
+                rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#ЗонаНефтегазонакопления
+ontology:ЗонаНефтегазонакопления rdf:type owl:Class ;
+                                 rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#Исследование
+ontology:Исследование rdf:type owl:Class .
+
+
+###  http://west-siberia-ontology.org/ontology#Месторождение
+ontology:Месторождение rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#НефтегазовыйОбъект
+ontology:НефтегазовыйОбъект rdf:type owl:Class .
+
+
+###  http://west-siberia-ontology.org/ontology#Область
+ontology:Область rdf:type owl:Class ;
+                 rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#Пласт
+ontology:Пласт rdf:type owl:Class ;
+               rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#Провинция
+ontology:Провинция rdf:type owl:Class ;
+                   rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+###  http://west-siberia-ontology.org/ontology#Публикация
+ontology:Публикация rdf:type owl:Class .
+
+
+###  http://west-siberia-ontology.org/ontology#Разработка
+ontology:Разработка rdf:type owl:Class ;
+                    rdfs:subClassOf ontology:Исследование .
+
+
+###  http://west-siberia-ontology.org/ontology#Район
+ontology:Район rdf:type owl:Class ;
+               rdfs:subClassOf ontology:НефтегазовыйОбъект .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://west-siberia-ontology.org/ontology#Геодинамическое_исследование
+ontology:Геодинамическое_исследование rdf:type owl:NamedIndividual ,
+                                               ontology:Геодинамическое .
+
+
+###  http://west-siberia-ontology.org/ontology#Геологическое_исследование
+ontology:Геологическое_исследование rdf:type owl:NamedIndividual ,
+                                             ontology:Геологическое .
+
+
+###  http://west-siberia-ontology.org/ontology#Геофизическое_исследование
+ontology:Геофизическое_исследование rdf:type owl:NamedIndividual ,
+                                             ontology:Геофизическое .
+
+
+###  http://west-siberia-ontology.org/ontology#Гидрогеологическое_исследование
+ontology:Гидрогеологическое_исследование rdf:type owl:NamedIndividual ,
+                                                  ontology:Гидрогеологическое .
+
+
+###  http://west-siberia-ontology.org/ontology#Залежь_Шаимская
+ontology:Залежь_Шаимская rdf:type owl:NamedIndividual ,
+                                  ontology:Залежь ;
+                         ontology:входитВ ontology:Пласт_Т1 .
+
+
+###  http://west-siberia-ontology.org/ontology#Западно_Сибирская_провинция
+ontology:Западно_Сибирская_провинция rdf:type owl:NamedIndividual ,
+                                              ontology:Провинция .
+
+
+###  http://west-siberia-ontology.org/ontology#Пласт_Т1
+ontology:Пласт_Т1 rdf:type owl:NamedIndividual ,
+                           ontology:Пласт ;
+                  ontology:входитВ ontology:Шаимское_месторождение .
+
+
+###  http://west-siberia-ontology.org/ontology#Приуральская_область
+ontology:Приуральская_область rdf:type owl:NamedIndividual ,
+                                       ontology:Область ;
+                              ontology:входитВ ontology:Западно_Сибирская_провинция .
+
+
+###  http://west-siberia-ontology.org/ontology#Публикация_Иванов_2005
+ontology:Публикация_Иванов_2005 rdf:type owl:NamedIndividual ,
+                                         ontology:Публикация ;
+                                ontology:относитсяКОбъекту ontology:Шаимский_район ;
+                                ontology:относитсяКТипуИсследования ontology:Геологическое_исследование ;
+                                ontology:автор "Иванов И.И." ;
+                                ontology:год 2005 ;
+                                ontology:журнал "Геология нефти и газа" ;
+                                ontology:название "Геологическое строение Шаимского района" ;
+                                ontology:ссылка "https://example.ru"^^xsd:anyURI .
+
+
+###  http://west-siberia-ontology.org/ontology#Публикация_Иванова_2020
+ontology:Публикация_Иванова_2020 rdf:type owl:NamedIndividual ,
+                                          ontology:Публикация ;
+                                 ontology:относитсяКОбъекту ontology:Залежь_Шаимская ;
+                                 ontology:относитсяКТипуИсследования ontology:Гидрогеологическое_исследование ;
+                                 ontology:автор "Иванова Е.С." ;
+                                 ontology:год 2020 ;
+                                 ontology:журнал "Геология нефти и газа" ;
+                                 ontology:название "Гидрогеологические условия среднеюрского комплекса" ;
+                                 ontology:ссылка "https://example.ru/ivanova2020"^^xsd:anyURI .
+
+
+###  http://west-siberia-ontology.org/ontology#Публикация_Кузнецов_2018
+ontology:Публикация_Кузнецов_2018 rdf:type owl:NamedIndividual ,
+                                           ontology:Публикация ;
+                                  ontology:относитсяКОбъекту ontology:Пласт_Т1 ;
+                                  ontology:автор "Кузнецов Д.Н." ;
+                                  ontology:год 2018 ;
+                                  ontology:журнал "Геология и геофизика" ;
+                                  ontology:название "Геодинамические особенности пласта Т1" ;
+                                  ontology:ссылка "https://example.ru/kuznetsov2018"^^xsd:anyURI .
+
+
+###  http://west-siberia-ontology.org/ontology#Публикация_Петров_2015
+ontology:Публикация_Петров_2015 rdf:type owl:NamedIndividual ,
+                                         ontology:Публикация ;
+                                ontology:относитсяКОбъекту ontology:Шаимское_месторождение ;
+                                ontology:относитсяКТипуИсследования ontology:Геологическое_исследование ;
+                                ontology:автор "Петров А.А." ;
+                                ontology:год 2015 ;
+                                ontology:журнал "Геология нефти и газа" ;
+                                ontology:название "Строение и нефтегазоносность Шаимского района" ;
+                                ontology:ссылка "https://example.ru/petrov2015"^^xsd:anyURI .
+
+
+###  http://west-siberia-ontology.org/ontology#Публикация_Сидоров_2010
+ontology:Публикация_Сидоров_2010 rdf:type owl:NamedIndividual ,
+                                          ontology:Публикация ;
+                                 ontology:относитсяКОбъекту ontology:Шаимский_район ;
+                                 ontology:относитсяКТипуИсследования ontology:Геологическое_исследование ;
+                                 ontology:автор "Сидоров А.А." ;
+                                 ontology:год 2010 ;
+                                 ontology:журнал "Нефтяное хозяйство" ;
+                                 ontology:название "Геофизические исследования Шаимского месторождения" ;
+                                 ontology:ссылка "https://example.ru/sidorov2010"^^xsd:anyURI .
+
+
+###  http://west-siberia-ontology.org/ontology#Шаимский_район
+ontology:Шаимский_район rdf:type owl:NamedIndividual ,
+                                 ontology:Район ;
+                        ontology:входитВ ontology:Приуральская_область .
+
+
+###  http://west-siberia-ontology.org/ontology#Шаимское_месторождение
+ontology:Шаимское_месторождение rdf:type owl:NamedIndividual ,
+                                         ontology:Месторождение ;
+                                ontology:входитВ ontology:Шаимский_район .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
