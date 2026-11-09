@@ -1,12 +1,21 @@
+---
 meta:
-  environment: python
+  environment: nodejs
   toolchain:
-    name: pip
-    version: 3.11
-
+    name: npm
+    version: 20
 build:
-  requirementsPath: academic-kb-prototype-MVP/requirements.txt
-
+  skip: false
+  additionalCommands: cd academic-kb-prototype-MVP/frontend && npm install && npm
+    run build
+  artifacts:
+    dist/*: /
 run:
+  persistenceMount: /data
+  scriptName: null
+  scriptArguments: null
+  nodeArguments: null
+  command: null
   containerPort: 80
-  command: cd academic-kb-prototype-MVP && python -m uvicorn app.main:app --host 0.0.0.0 --port 80
+  singleton: true
+  zeroDowntime: false
