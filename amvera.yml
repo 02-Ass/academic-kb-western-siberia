@@ -1,11 +1,10 @@
----
-meta:
-  environment: docker
-  toolchain:
-    name: docker
+   meta:
+     environment: docker
+     toolchain:
+       name: docker
 
-build:
-  dockerfile: Dockerfile
+   build:
+     dockerfile: Dockerfile.backend
 
-run:
-  containerPort: 80
+   run:
+     containerPort: 80
