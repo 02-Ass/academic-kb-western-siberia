@@ -91,9 +91,7 @@ app.include_router(admin_module.router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://academic-kb-frontend-sidick.msk1.amvera.tech",
-    ],
+    allow_origin_regex=r"https://academic-kb-.*\.amvera\.tech",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
