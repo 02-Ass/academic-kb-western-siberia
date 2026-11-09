@@ -1,21 +1,11 @@
 ---
 meta:
-  environment: nodejs
+  environment: docker
   toolchain:
-    name: npm
-    version: 20
+    name: docker
+
 build:
-  skip: false
-  additionalCommands: cd academic-kb-prototype-MVP/frontend && npm install && npm
-    run build
-  artifacts:
-    dist/*: /
+  dockerfile: Dockerfile
+
 run:
-  persistenceMount: /data
-  scriptName: null
-  scriptArguments: null
-  nodeArguments: null
-  command: null
   containerPort: 80
-  singleton: true
-  zeroDowntime: false
