@@ -22,6 +22,7 @@ import uuid
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import List, Optional
+from fastapi import Request, Response
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, UploadFile
@@ -97,6 +98,14 @@ app.add_middleware(
 )
 app.include_router(ontology_router)
 app.include_router(admin_module.router)
+@app.options("/{rest_of_path:path}")
+async def preflight_handler(request: Request, rest_of_path: str):
+    response = Response()
+    response.headers["Access-Control-Allow-Origin"] = request.headers.get("origin", "*")
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    return response
 
 def _field_detail(db: Session, f: models.Field) -> schemas.FieldDetailOut:
     anc = hierarchy.field_ancestors(db, f)
