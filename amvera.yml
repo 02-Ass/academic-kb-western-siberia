@@ -1,12 +1,10 @@
 meta:
-  environment: python
+  environment: docker
   toolchain:
-    name: pip
-    version: 3.11
+    name: docker
 
 build:
-  requirementsPath: academic-kb-prototype-MVP/requirements.txt
+  dockerfile: Dockerfile
 
 run:
   containerPort: 80
-  command: cd academic-kb-prototype-MVP && python -m uvicorn app.main:app --host 0.0.0.0 --port 80
