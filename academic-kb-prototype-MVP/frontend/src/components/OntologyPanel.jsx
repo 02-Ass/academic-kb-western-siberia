@@ -247,7 +247,7 @@ export default function OntologyPanel({ initial = {} }) {
       <section className="onto-box">
         <h3>Файл онтологии</h3>
         <div className="muted-text">
-          Откройте в Protégé и запустите HermiT (Reasoner → HermiT → Start reasoner): результат совпадёт с выводом приложения.
+          При запуске HermiT в Protégé (Reasoner → HermiT → Start reasoner) вывод совпадает с выводом приложения.
         </div>
         <div className="import-controls">
           <a className="import-secondary" href={api.ontologyExportUrl("owl", false)}>Скачать .owl (только записанное)</a>
